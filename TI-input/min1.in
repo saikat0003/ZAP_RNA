@@ -1,0 +1,35 @@
+minimisation
+ &cntrl
+   imin = 1,         ! minimization on  
+   ntmin = 2, 	     ! Only the steepest descent method is used
+   maxcyc = 10000,   ! The maximum number of cycles of minimization
+   ncyc   = 5000,    ! minimization will be switched from steepest descent to conjugate gradient 
+   ntpr = 1000,      ! Print the progress of the minimization every ntpr steps 
+   ntwe = 1000,      ! Every ntwe steps, the energies and temperatures will be written
+   dx0 = 1.0D-7,     !The initial step length. If the initial step length is too big then will give a huge energy
+   ntb = 1,          !Constant volume periodic boundaries
+   !ntr = 1,
+   cut = 12.0,
+
+   !nmropt = 1,
+   !ntr = 1, 
+   !restraint_wt = 100.00,
+   !restraintmask='!:WAT',
+
+
+   icfe = 1,         !free energy calculations 
+   ifsc = 1,         !1 SC potentials are used
+   clambda = 0.52,    !Zero corresponds to the unperturbed Hamiltonian V0. l=1 corresponds to the perturbed Hamiltonian V1
+   scalpha = 0.5,    ! default value is 0.5
+   scbeta = 12.0,    ! Default value is 12A2
+   logdvdl = 0,      !If set to .ne. 0,calculated during every step of the run will be printed out at the end of the simulation 
+   klambda = 1,      !        
+   timask1 = ':90', timask2 = ':229',
+   scmask1 = ':90', scmask2 = ':229',
+ /
+ &ewald
+ / 
+ &wt type = 'END'
+ /
+
+

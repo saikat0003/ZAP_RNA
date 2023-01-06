@@ -1,0 +1,33 @@
+heating and equilibration
+ &cntrl
+   imin = 0, nstlim = 200000, irest = 0, ntx = 1, dt = 0.002,
+   ntt = 1, temp0 = 300.0, tempi = 0.0, tautp = 2.0,
+   ntc = 2, ntf = 1, ntb = 1,
+   ioutfm = 1, iwrap = 1, 
+   ntwe = 1000, ntwx = 1000, ntpr = 1000, ntwr = 5000,
+   
+   !nmropt = 1,
+   ntr = 1, restraint_wt = 100.00,
+   restraintmask='!:WAT',
+
+   icfe = 1, ifsc = 1, clambda = 0.52, scalpha = 0.5, scbeta = 12.0,
+   logdvdl = 0,
+
+   timask1 = ':90', timask2 = ':229',
+   scmask1 = ':90', scmask2 = ':229',
+
+ /
+ &ewald
+ / 
+ &wt
+   type='TEMP0',
+   istep1 = 0, istep2 = 100000,                                      
+   value1 = 0.0, value2 = 300.0,
+ /
+   type='TEMP0',
+   istep1 = 100001, istep2 = 200000,                                      
+   value1 = 300.0, value2 = 300.0,
+ /
+ &wt type = 'END'
+ /
+
